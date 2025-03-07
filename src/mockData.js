@@ -12,7 +12,7 @@ const mockData = [
     description:
       "High-quality wireless headphones with noise-cancelling feature, comfortable ear pads, and 30-hour battery life.",
     image:
-      "https://images.unsplash.com/photo-1735528655501-cf671a3323c3?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://vn.jbl.com/dw/image/v2/AAUJ_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw4cd4cad7/JBL_TOUR_ONE_BLK_Hero.png?sw=537&sfrm=png",
     category: "Audio",
     lastUpdated: "2025-03-05",
   },
@@ -29,7 +29,7 @@ const mockData = [
     description:
       "Portable Bluetooth speaker with clear sound quality and 12 hours of playtime, perfect for outdoor use.",
     image:
-      "https://images.unsplash.com/photo-1735528655501-cf671a3323c3?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://vn.jbl.com/dw/image/v2/AAUJ_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw68adc84b/JBL_CLIP_5_HERO_SAND_49709_x3.png?sw=537&sfrm=png",
     category: "Audio",
     lastUpdated: "2025-02-20",
   },
@@ -46,7 +46,8 @@ const mockData = [
     note: ["rẻ vô địch", "mua kèm deal sốc"],
     description:
       "Adjustable smartphone stand with sturdy base, ideal for video calls, watching movies, or reading.",
-    image: "https://via.placeholder.com/150?text=Smartphone+Stand",
+    image:
+      "https://img.lazcdn.com/g/p/61818973309accaf9b7eb9113e1da64a.jpg_720x720q80.jpg_.webp",
     category: "Accessories",
     lastUpdated: "2025-03-01",
   },
@@ -62,7 +63,8 @@ const mockData = [
     note: ["rẻ vô địch", "mua kèm deal sốc"],
     description:
       "Energy-efficient LED desk lamp with adjustable brightness and color temperature, perfect for home office use.",
-    image: "https://via.placeholder.com/150?text=LED+Desk+Lamp",
+    image:
+      "https://rangdong.com.vn/uploads/product/LED/LED_Den_ban/RD_RL_16_LED/RD_RL_16_LED_0.jpg",
     category: "Home & Office",
     lastUpdated: "2025-03-03",
   },
@@ -78,7 +80,8 @@ const mockData = [
     note: ["rẻ vô địch", "mua kèm deal sốc"],
     description:
       "A sleek fitness tracker with heart rate monitor, sleep tracking, step counting, and waterproof design.",
-    image: "https://via.placeholder.com/150?text=Fitness+Tracker+Watch",
+    image:
+      "https://platform.theverge.com/wp-content/uploads/sites/2/2025/02/257523_Amazfit_Active_2_AKrales_0106.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=2400",
     category: "Wearables",
     lastUpdated: "2025-01-25",
   },
@@ -94,7 +97,8 @@ const mockData = [
     note: ["rẻ vô địch", "mua kèm deal sốc"],
     description:
       "Compact power bank with 10,000mAh capacity, fast charging capabilities, and dual USB ports.",
-    image: "https://via.placeholder.com/150?text=Portable+Power+Bank",
+    image:
+      "https://i0.wp.com/akia.vn/wp-content/uploads/2024/05/tram-sac-du-phong-ugreen-gs1200-1200w.jpg?fit=510%2C510&ssl=1",
     category: "Accessories",
     lastUpdated: "2025-02-10",
   },
@@ -110,7 +114,7 @@ const mockData = [
     note: ["rẻ vô địch", "mua kèm deal sốc"],
     description:
       "Stylish and protective laptop sleeve with water-resistant fabric and a soft interior lining to protect your device.",
-    image: "https://via.placeholder.com/150?text=Laptop+Sleeve",
+    image: "https://macinsta.vn/wp-content/uploads/2020/09/MC10-3-510x510.jpg",
     category: "Accessories",
     lastUpdated: "2025-03-04",
   },
@@ -126,7 +130,8 @@ const mockData = [
     note: ["rẻ vô địch", "mua kèm deal sốc"],
     description:
       "Smart thermostat with remote control, energy-saving features, and easy installation.",
-    image: "https://via.placeholder.com/150?text=Smart+Thermostat",
+    image:
+      "https://cdn.thewirecutter.com/wp-content/media/2022/11/smartthermostats-2048px-2898-2x1-1.jpg?width=1024&quality=75&crop=2:1&auto=webp 1x, https://cdn.thewirecutter.com/wp-content/media/2022/11/smartthermostats-2048px-2898-2x1-1.jpg?width=2048&quality=75&crop=2:1&auto=webp 1.1x",
     category: "Home Automation",
     lastUpdated: "2025-03-02",
   },
@@ -142,7 +147,7 @@ const mockData = [
     status: "",
     description:
       "Powerful electric toothbrush with multiple brushing modes and a 2-minute timer for thorough cleaning.",
-    image: "https://via.placeholder.com/150?text=Electric+Toothbrush",
+    image: "//s.alicdn.com/@sc04/kf/Had4f7fdbd6434adf8da0f878e765c052V.jpg_300x300.jpg",
     category: "Personal Care",
     lastUpdated: "2025-03-03",
   },
@@ -158,7 +163,7 @@ const mockData = [
     note: ["rẻ vô địch", "mua kèm deal sốc"],
     description:
       "Ergonomic gaming mouse with customizable buttons, adjustable DPI, and RGB lighting.",
-    image: "https://via.placeholder.com/150?text=Gaming+Mouse",
+    image: "//product.hstatic.net/200000722513/product/thumbchuot_a405fadb92a34c429c3eed4d11a84fb5_grande.jpg",
     category: "Accessories",
     lastUpdated: "2025-02-15",
   },

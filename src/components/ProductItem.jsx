@@ -36,7 +36,7 @@ const ProductItem = ({
         className="max-w-sm relative w-full overflow-hidden shadow-2xl hover:border-2 hover:border-orange-500 hover:scale-102 transition-transform"
       >
         <div>
-          <img className="w-full h-80 border-none" src={img} alt="" />
+          <img className="w-full h-80 border-none object-cover" src={img} alt="" />
         </div>
         <div className="p-2 flex flex-col gap-1.5 line-clamp-2 text-ellipsis overflow-hidden">
           <p className="line-clamp-2 overflow-hidden text-ellipsis">
