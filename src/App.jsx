@@ -3,22 +3,32 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import mockData from "./mockData";
 import ProductItem from "./components/ProductItem";
+import moment from "moment";
 
 function App() {
   const [data, setData] = useState(mockData);
   const [status, setStatus] = useState("");
   const [filteredData, setFilteredData] = useState(data);
-  const [isActive, setIsActive] = useState(false);
+
   useEffect(() => {
     let filtered = [...data];
     if (status === "ban chay") {
-      filtered = filtered.sort(((a, b) => a.bestSeller - b.bestSeller));
+      filtered = filtered.sort((a, b) => a.bestSeller - b.bestSeller);
     } else if (status === "lien quan") {
       filtered = filtered.filter((item) => item.rating === 4.5);
     } else if (status === "low") {
       filtered = filtered.sort((a, b) => a.price - b.price);
     } else if (status === "high") {
       filtered = filtered.sort((a, b) => b.price - a.price);
+    } else if (status === "new") {
+      filtered = filtered.sort((a, b) => {
+        const dateA = moment(a.lastUpdated, "YYYY-MM-DD");
+        const dateB = moment(b.lastUpdated, "YYYY-MM-DD");
+        console.log(dateA, dateB);
+        console.log(dateA - dateB);
+
+        return dateB - dateA;
+      });
     }
     setFilteredData(filtered);
   }, [status, data]);
@@ -26,9 +36,6 @@ function App() {
   const handlePrice = (e) => {
     setStatus(e.target.value);
   };
-  const timeElapsed = Date.now();
-  const today = new Date(timeElapsed);
-  
 
   return (
     <>
@@ -46,7 +53,12 @@ function App() {
             >
               Liên quan
             </p>
-            <p className="p-2 cursor-pointer bg-white">Mới nhất</p>
+            <p
+              className="p-2 cursor-pointer bg-white"
+              onClick={() => setStatus("new")}
+            >
+              Mới nhất
+            </p>
             <p
               onClick={() => setStatus("ban chay")}
               className={`p-2 cursor-pointer  ${

@@ -14,7 +14,7 @@ const mockData = [
     image:
       "https://vn.jbl.com/dw/image/v2/AAUJ_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw4cd4cad7/JBL_TOUR_ONE_BLK_Hero.png?sw=537&sfrm=png",
     category: "Audio",
-    lastUpdated: "2025-03-05",
+    lastUpdated: "2025-03-08",
   },
   {
     id: 2,
@@ -42,7 +42,6 @@ const mockData = [
     status: "Yêu thích",
     discount: 45,
     bestSeller: 200,
-    bestSeller: 79,
     note: ["rẻ vô địch", "mua kèm deal sốc"],
     description:
       "Adjustable smartphone stand with sturdy base, ideal for video calls, watching movies, or reading.",
@@ -116,7 +115,7 @@ const mockData = [
       "Stylish and protective laptop sleeve with water-resistant fabric and a soft interior lining to protect your device.",
     image: "https://macinsta.vn/wp-content/uploads/2020/09/MC10-3-510x510.jpg",
     category: "Accessories",
-    lastUpdated: "2025-03-04",
+    lastUpdated: "2025-03-08",
   },
   {
     id: 8,

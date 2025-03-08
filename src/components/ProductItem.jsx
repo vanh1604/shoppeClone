@@ -51,7 +51,7 @@ const ProductItem = ({
               -{discount}%
             </span>
           </div>
-          <p>
+          <div>
             <div className="flex gap-2">
               {note.map((item, index) => (
                 <span
@@ -62,7 +62,7 @@ const ProductItem = ({
                 </span>
               ))}
             </div>
-          </p>
+          </div>
           <p className="flex items-center gap-2">
             <span>
               <FaStar className="text-yellow-300" />
