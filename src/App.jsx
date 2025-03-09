@@ -121,9 +121,9 @@ function App() {
         </div>
       </div>
       <div className="grid mt-3 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4">
-        {currentItems.map((item, index) => (
+        {currentItems.map((item) => (
           <ProductItem
-            key={item.id} // Sử dụng item.id thay vì index
+            key={item.id}
             name={item.name}
             price={item.price}
             des={item.description}
