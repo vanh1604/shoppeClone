@@ -3,6 +3,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import mockData from "./mockData";
 import ProductItem from "./components/ProductItem";
 import moment from "moment";
+import Header from "./components/Header";
 
 function App() {
   const [status, setStatus] = useState("");
@@ -53,6 +54,7 @@ function App() {
 
   return (
     <div className="container mx-auto">
+      <Header/>
       <div className="bg-slate-200 flex max-sm:flex-col justify-between items-center p-2">
         <div className="flex gap-4 max-sm:flex-col">
           <p className="p-2 cursor-pointer text-slate-700">Sắp xếp theo</p>
