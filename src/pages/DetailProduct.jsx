@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import mockData from "../mockData";
 import { useDispatch } from "react-redux";
-import { addCartItems, updateQuantityItems } from "../store/cart";
+import { addCartItems } from "../store/cart";
 
 const DetailProduct = () => {
   const { id: productId } = useParams();
   const [productData, setProductData] = useState(null);
-  const [amount, setAmount] = useState(1);
+  const [amount, setAmount] = useState(1); // Số lượng tạm thời, chưa dispatch ngay
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -20,30 +20,12 @@ const DetailProduct = () => {
     getInfoProduct();
   }, [productId]);
 
-  useEffect(() => {
-    if (productData?.quantity) {
-      setAmount(productData.quantity);
-    }
-  }, [productData]);
-
-  const handleUpdateQuantity = (id, newQuantity) => {
-    dispatch(updateQuantityItems({ id, quantity: newQuantity }));
-  };
-
   const increaseQty = () => {
-    setAmount((prev) => {
-      const newQuantity = prev + 1;
-      handleUpdateQuantity(productData?.id, newQuantity);
-      return newQuantity;
-    });
+    setAmount((prev) => prev + 1); // Chỉ cập nhật amount trên giao diện
   };
 
   const decreaseQty = () => {
-    setAmount((prev) => {
-      const newQuantity = prev > 1 ? prev - 1 : 1;
-      handleUpdateQuantity(productData?.id, newQuantity);
-      return newQuantity;
-    });
+    setAmount((prev) => (prev > 1 ? prev - 1 : 1)); // Chỉ cập nhật amount trên giao diện
   };
 
   if (!productData) return <p>Loading...</p>;
@@ -69,6 +51,7 @@ const DetailProduct = () => {
   const formatOriginPrice = new Intl.NumberFormat("vi-VN", {
     minimumFractionDigits: 0,
   }).format(price);
+
   const addProductToCart = () => {
     const product = {
       id,
@@ -79,10 +62,9 @@ const DetailProduct = () => {
       image,
       location,
       discount,
-      quantity: amount,
+      quantity: amount, // Sử dụng amount hiện tại khi nhấn "Thêm vào giỏ hàng"
     };
-    
-    dispatch(addCartItems(product));
+    dispatch(addCartItems(product)); // Dispatch action để thêm vào giỏ hàng
   };
 
   return (

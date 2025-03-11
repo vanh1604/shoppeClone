@@ -7,6 +7,8 @@ import { useSelector } from "react-redux";
 
 const SearchBar = () => {
   const cart = useSelector((state) => state.cart.cart);
+  console.log(cart);
+  
   const cartTotalAmount = cart.reduce(
     (accumulator, currentValue) => accumulator + currentValue.quantity,
     0
