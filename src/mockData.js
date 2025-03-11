@@ -2,7 +2,7 @@ const mockData = [
   {
     id: 1,
     name: "Wireless Headphones",
-    price: 79.99,
+    price: 7999000,
     rating: 4.5,
     loc: "Hanoi",
     status: "Yêu thích",
@@ -19,7 +19,7 @@ const mockData = [
   {
     id: 2,
     name: "Bluetooth Speaker",
-    price: 59.99,
+    price: 5999,
     rating: 4.2,
     loc: "Hanoi",
     status: "Yêu thích",
@@ -36,7 +36,7 @@ const mockData = [
   {
     id: 3,
     name: "Smartphone Stand",
-    price: 19.99,
+    price: 1999,
     rating: 4.8,
     loc: "Hanoi",
     status: "Yêu thích",
@@ -53,7 +53,7 @@ const mockData = [
   {
     id: 4,
     name: "LED Desk Lamp",
-    price: 39.99,
+    price: 3999,
     rating: 4.6,
     loc: "Hanoi",
     bestSeller: 5789,
@@ -70,7 +70,7 @@ const mockData = [
   {
     id: 5,
     name: "Fitness Tracker Watch",
-    price: 129.99,
+    price: 12999,
     rating: 4.7,
     discount: 45,
     loc: "Hanoi",
@@ -87,7 +87,7 @@ const mockData = [
   {
     id: 6,
     name: "Portable Power Bank",
-    price: 25.99,
+    price: 2599,
     rating: 4.4,
     discount: 45,
     bestSeller: 567678,
@@ -104,7 +104,7 @@ const mockData = [
   {
     id: 7,
     name: "Laptop Sleeve",
-    price: 29.99,
+    price: 2999,
     rating: 4.3,
     discount: 45,
     bestSeller: 3425,
@@ -120,7 +120,7 @@ const mockData = [
   {
     id: 8,
     name: "Smart Thermostat",
-    price: 149.99,
+    price: 14999,
     rating: 4.9,
     discount: 45,
     loc: "Hanoi",
@@ -137,7 +137,7 @@ const mockData = [
   {
     id: 9,
     name: "Electric Toothbrush",
-    price: 69.99,
+    price: 6999,
     rating: 4.7,
     loc: "Hanoi",
     bestSeller: 124,
@@ -154,7 +154,7 @@ const mockData = [
   {
     id: 10,
     name: "Gaming Mouse",
-    price: 49.99,
+    price: 4999,
     rating: 4.6,
     discount: 45,
     loc: "Hanoi",
@@ -171,7 +171,7 @@ const mockData = [
   {
     id: 11,
     name: "Mechanical Keyboard",
-    price: 89.99,
+    price: 8999,
     rating: 4.8,
     loc: "Hanoi",
     status: "Yêu thích",
@@ -188,7 +188,7 @@ const mockData = [
   {
     id: 12,
     name: "Smartwatch",
-    price: 199.99,
+    price: 19999,
     rating: 4.7,
     loc: "Hanoi",
     status: "Yêu thích",
@@ -205,7 +205,7 @@ const mockData = [
   {
     id: 13,
     name: "Wireless Charging Pad",
-    price: 34.99,
+    price: 3499,
     rating: 4.5,
     loc: "Hanoi",
     status: "Yêu thích",
@@ -222,7 +222,7 @@ const mockData = [
   {
     id: 14,
     name: "Noise-Cancelling Earbuds",
-    price: 129.99,
+    price: 12999,
     rating: 4.6,
     loc: "Hanoi",
     status: "Yêu thích",
@@ -239,7 +239,7 @@ const mockData = [
   {
     id: 15,
     name: "Smart Light Bulb",
-    price: 19.99,
+    price: 1999,
     rating: 4.4,
     loc: "Hanoi",
     status: "Yêu thích",
@@ -255,7 +255,7 @@ const mockData = [
   {
     id: 16,
     name: "External Hard Drive",
-    price: 99.99,
+    price: 9999,
     rating: 4.7,
     loc: "Hanoi",
     status: "Yêu thích",
@@ -271,7 +271,7 @@ const mockData = [
   {
     id: 17,
     name: "Ergonomic Office Chair",
-    price: 259.99,
+    price: 25999,
     rating: 4.8,
     loc: "Hanoi",
     status: "Yêu thích",
@@ -287,7 +287,7 @@ const mockData = [
   {
     id: 18,
     name: "Smart Door Lock",
-    price: 189.99,
+    price: 18999,
     rating: 4.9,
     loc: "Hanoi",
     status: "Yêu thích",
@@ -304,7 +304,7 @@ const mockData = [
   {
     id: 19,
     name: "Drone Camera",
-    price: 499.99,
+    price: 49999,
     rating: 4.8,
     loc: "Hanoi",
     status: "Yêu thích",

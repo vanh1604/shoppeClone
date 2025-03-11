@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import mockData from '../mockData'
+import mockData from "../mockData";
 import ProductItem from "../components/ProductItem";
 import moment from "moment";
 const Home = () => {
@@ -51,7 +51,6 @@ const Home = () => {
   };
   return (
     <div className="container mx-auto">
-      
       <div className="bg-slate-200 flex max-sm:flex-col justify-between items-center p-2">
         <div className="flex gap-4 max-sm:flex-col">
           <p className="p-2 cursor-pointer text-slate-700">Sắp xếp theo</p>
@@ -71,7 +70,9 @@ const Home = () => {
               setStatus("new");
               setCurrentPage(1);
             }}
-            className="p-2 cursor-pointer bg-white"
+            className={`p-2 cursor-pointer ${
+              status === "new" ? "bg-orange-500" : "bg-white"
+            }`}
           >
             Mới nhất
           </p>

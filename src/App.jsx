@@ -1,18 +1,34 @@
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, Fragment } from "react";
 
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import { Route, Routes } from "react-router-dom";
 import Cart from "./pages/Cart";
+import { routes } from "./routes/routes";
+import DefaultComponent from "./components/DefaultComponent";
 
 function App() {
   return (
     <>
-      <Header />
+     <div>
+      <Header/>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
+        {routes.map(({ Page, path, isShowSearchBar }) => {
+          const Layout = isShowSearchBar ? DefaultComponent : Fragment;
+          return (
+            <Route
+              key={path}
+              path={path}
+              element={
+                <Layout>
+                  <Page />
+                </Layout>
+              }
+            />
+          );
+        })}
       </Routes>
+    </div>
     </>
   );
 }
