@@ -7,7 +7,7 @@ import { addCartItems } from "../store/cart";
 const DetailProduct = () => {
   const { id: productId } = useParams();
   const [productData, setProductData] = useState(null);
-  const [amount, setAmount] = useState(1); // Số lượng tạm thời, chưa dispatch ngay
+  const [amount, setAmount] = useState(1); 
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -21,11 +21,11 @@ const DetailProduct = () => {
   }, [productId]);
 
   const increaseQty = () => {
-    setAmount((prev) => prev + 1); // Chỉ cập nhật amount trên giao diện
+    setAmount((prev) => prev + 1);
   };
 
   const decreaseQty = () => {
-    setAmount((prev) => (prev > 1 ? prev - 1 : 1)); // Chỉ cập nhật amount trên giao diện
+    setAmount((prev) => (prev > 1 ? prev - 1 : 1));
   };
 
   if (!productData) return <p>Loading...</p>;
