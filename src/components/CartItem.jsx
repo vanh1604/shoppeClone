@@ -11,15 +11,19 @@ const CartItem = ({ product }) => {
   const [quantity, setQuantity] = useState(product.quantity);
   const dispatch = useDispatch();
   const cartPayment = useSelector((state) => state.cart.cartPayment);
-
+  console.log(cartPayment);
+  
   const increaseQty = () => {
     setQuantity((prev) => prev + 1);
     handleUpdateQuantity(product.id, quantity + 1);
+    cartPayment
   };
 
   const decreaseQty = () => {
     setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
     handleUpdateQuantity(product.id, quantity > 1 ? quantity - 1 : 1);
+    console.log(cartPayment);
+    
   };
 
   const handleRemove = (id) => {

@@ -7,7 +7,7 @@ import { addCartItems, updateQuantityItems } from "../store/cart";
 const DetailProduct = () => {
   const { id: productId } = useParams();
   const [productData, setProductData] = useState(null);
-  const [quantity, setQuantity] = useState(1);
+  const [amount, setAmount] = useState(1);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const DetailProduct = () => {
 
   useEffect(() => {
     if (productData?.quantity) {
-      setQuantity(productData.quantity);
+      setAmount(productData.quantity);
     }
   }, [productData]);
 
@@ -31,7 +31,7 @@ const DetailProduct = () => {
   };
 
   const increaseQty = () => {
-    setQuantity((prev) => {
+    setAmount((prev) => {
       const newQuantity = prev + 1;
       handleUpdateQuantity(productData?.id, newQuantity);
       return newQuantity;
@@ -39,7 +39,7 @@ const DetailProduct = () => {
   };
 
   const decreaseQty = () => {
-    setQuantity((prev) => {
+    setAmount((prev) => {
       const newQuantity = prev > 1 ? prev - 1 : 1;
       handleUpdateQuantity(productData?.id, newQuantity);
       return newQuantity;
@@ -79,8 +79,9 @@ const DetailProduct = () => {
       image,
       location,
       discount,
-      quantity,
+      quantity: amount,
     };
+    
     dispatch(addCartItems(product));
   };
 
@@ -92,7 +93,7 @@ const DetailProduct = () => {
         </div>
 
         <div className="col-span-7 max-auto">
-          <h1 className="text-xl font-bold">{name}</h1>
+          <h1 className="text-xl font-normal">{name}</h1>
           <div className="flex items-center space-x-2 my-2">
             <div>
               <span className="underline">{rating}</span>
@@ -114,7 +115,9 @@ const DetailProduct = () => {
             <span className="text-red-500 text-2xl font-bold">
               {formatPrice} <span>₫</span>
             </span>
-            <span className="text-gray-400 line-through ml-2">{formatOriginPrice}₫</span>
+            <span className="text-gray-400 line-through ml-2">
+              {formatOriginPrice}₫
+            </span>
             <span className="text-red-500 ml-2">-{discount}%</span>
           </div>
 
@@ -175,7 +178,7 @@ const DetailProduct = () => {
               <button className="px-3 py-1 border-r" onClick={decreaseQty}>
                 −
               </button>
-              <div className="text-center w-24">{quantity}</div>
+              <div className="text-center w-24">{amount}</div>
               <button className="px-3 py-1 border-l" onClick={increaseQty}>
                 +
               </button>

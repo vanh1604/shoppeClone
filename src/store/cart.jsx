@@ -15,9 +15,9 @@ export const cartSlice = createSlice({
       const existingProduct = state.cart.find((item) => item.id === product.id);
 
       if (existingProduct) {
-        existingProduct.quantity += 1;
+        existingProduct.quantity += product.quantity;
       } else {
-        state.cart.push({ ...product, quantity: 1 });
+        state.cart.push({ ...product});
       }
     },
     updateQuantityItems: (state, action) => {

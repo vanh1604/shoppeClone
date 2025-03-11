@@ -61,7 +61,7 @@ const Cart = () => {
         <div className="flex justify-between items-center">
           <div className="px-2">
             <div className="text-xl font-semibold">Tổng số tiền thanh toán</div>
-            <div className="text-xl text-orange-500 font-bold">{totalAmount()}</div>
+            <div className="text-xl text-orange-500">{totalAmount()}</div>
           </div>
           <div className="text-xl">Tổng số sản phầm : {handleTotalQuantity()}</div>
           <div>
