@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   deleteCartItem,
@@ -11,21 +11,16 @@ const CartItem = ({ product }) => {
   const [quantity, setQuantity] = useState(product.quantity);
   const dispatch = useDispatch();
   const cartPayment = useSelector((state) => state.cart.cartPayment);
-  console.log(cartPayment);
-  
   const increaseQty = () => {
     setQuantity((prev) => prev + 1);
     handleUpdateQuantity(product.id, quantity + 1);
-    cartPayment
+    cartPayment;
   };
-
   const decreaseQty = () => {
     setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
     handleUpdateQuantity(product.id, quantity > 1 ? quantity - 1 : 1);
     console.log(cartPayment);
-    
   };
-
   const handleRemove = (id) => {
     dispatch(deleteCartItem({ id }));
   };
@@ -42,12 +37,12 @@ const CartItem = ({ product }) => {
       dispatch(totalPrice({ id: product.id }));
     }
   };
-  const formatPrice = new Intl.NumberFormat("vi-VN", {
-    minimumFractionDigits: 0,
-  }).format(product.price);
-  const priceOfQuantity = new Intl.NumberFormat("vi-VN", {
-    minimumFractionDigits: 0,
-  }).format(product.price * product.quantity);
+
+  const priceOfQuantity = useMemo(() =>
+    new Intl.NumberFormat("vi-VN", {
+      minimumFractionDigits: 0,
+    }).format(product.price * product.quantity)
+  );
   return (
     <div className="grid grid-cols-6 items-center border-b px-4 py-3 gap-4">
       <div className="flex items-center gap-3">
@@ -58,18 +53,18 @@ const CartItem = ({ product }) => {
           className="w-5 h-5"
         />
         <img
-          src={product.image}
+          src={product.images[1]}
           alt={product.name}
           className="w-16 h-16 rounded-md object-cover"
         />
       </div>
 
       <div className="text-center">
-        <h3 className="font-semibold">{product.name}</h3>
+        <h3 className="font-semibold">{product.title}</h3>
       </div>
 
       <div className="text-center">
-        <p className="text-lg font-bold text-red-600">{formatPrice}₫</p>
+        <p className="text-lg font-bold text-red-600">{product.price}₫</p>
       </div>
 
       <div className="flex items-center mx-auto border rounded-md w-24">

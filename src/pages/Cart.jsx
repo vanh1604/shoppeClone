@@ -1,37 +1,33 @@
 import { useSelector } from "react-redux";
 import CartItem from "../components/CartItem";
 import HeaderCart from "../components/HeaderCart";
+import { useMemo } from "react";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart.cart);
   const cartPayment = useSelector((state) => state.cart.cartPayment);
-  const totalAmount = () => {
+  const totalAmount = useMemo(() => {
     if (cartPayment.length > 0) {
       const amount = cartPayment.reduce((iniValue, item) => {
         return iniValue + item.price * item.quantity;
       }, 0);
-      const roundedAmount = Math.round(amount);
-
       return new Intl.NumberFormat("vi-VN", {
         minimumFractionDigits: 0,
-      }).format(roundedAmount);
+      }).format(Math.round(amount));
     }
-    return "0";
-  };
-  const handleTotalQuantity = () => {
-    if (cartPayment.length > 0) {
-      const totalQuantity = cartPayment.reduce((iniValue, item) => {
-        return iniValue + item.quantity;
-      }, 0);
-      return totalQuantity;
-    } else {
-      return <span>0</span>;
-    }
-  };
+    return 0;
+  }, [cartPayment]);
+
+  const totalQuantity = useMemo(() => {
+    return cartPayment.reduce((iniValue, item) => {
+      return iniValue + item.quantity;
+    }, 0);
+  }, [cartPayment]);
+
   return (
     <div className="relative">
       <HeaderCart />
-      <div className="container mx-auto bg-white p-6 mt-2 shadow-md ">
+      <div className="container mx-auto bg-white p-6 mt-2 shadow-md">
         <div className="w-full pb-2 text-gray-500">
           <div className="grid grid-cols-6 gap-4 px-4 py-2 font-semibold bg-gray-100 rounded-md border-b">
             <span className="text-left">Sản Phẩm</span>
@@ -61,9 +57,9 @@ const Cart = () => {
         <div className="flex justify-between items-center">
           <div className="px-2">
             <div className="text-xl font-semibold">Tổng số tiền thanh toán</div>
-            <div className="text-xl text-orange-500">{totalAmount()}</div>
+            <div className="text-xl text-orange-500">{totalAmount}₫</div>
           </div>
-          <div className="text-xl">Tổng số sản phầm : {handleTotalQuantity()}</div>
+          <div className="text-xl">Tổng số sản phẩm: {totalQuantity}</div>
           <div>
             <button className="bg-orange-500 p-2 rounded-2xl text-white hover:opacity-85 cursor-pointer">
               Thanh toán

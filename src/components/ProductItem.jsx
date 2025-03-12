@@ -14,40 +14,14 @@ const ProductItem = ({
   location,
   status,
   discount,
-  note,
+
   id,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const discountPrice = Math.round(price - price * (Number(discount) / 100));
 
   const formatPrice = new Intl.NumberFormat("vi-VN", {
     minimumFractionDigits: 0,
-  }).format(discountPrice);
-  const handleStatus = () => {
-    if (status) {
-      return (
-        <span className="bg-orange-500 text-[10px] font-semibold text-white p-1 rounded">
-          {status}
-        </span>
-      );
-    }
-  };
-  const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart);
-
-  const addProductToCart = () => {
-    const product = {
-      id,
-      price: discountPrice,
-      name,
-      des,
-      rating,
-      img,
-      location,
-      discount,
-    };
-    dispatch(addCartItems(product));
-  };
+  }).format(price);
 
   return (
     <Link to={`/${id}`}>
@@ -60,35 +34,19 @@ const ProductItem = ({
           <div>
             <img
               className="w-full h-80 border-none object-cover"
-              src={img}
+              src={img[0]}
               alt=""
             />
           </div>
           <div className="p-2 flex flex-col gap-1.5 line-clamp-2 text-ellipsis overflow-hidden">
-            <p className="line-clamp-2 overflow-hidden text-ellipsis">
-              {handleStatus()} {des}
-            </p>
+            <p className="line-clamp-1 overflow-hidden text-ellipsis">{name}</p>
             <div className="flex gap-2 items-center">
               <p className="text-orange-500">
                 <span>₫</span>
                 {formatPrice}
               </p>
-              <span className="bg-slate-200 text-sm px-2 front-medium text-orange-500 rounded">
-                -{discount}%
-              </span>
             </div>
-            <div>
-              <div className="flex gap-2">
-                {note.map((item, index) => (
-                  <span
-                    key={index}
-                    className="text-[12px] text-orange-500 space-x-1"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
+
             <p className="flex items-center gap-2">
               <span>
                 <FaStar className="text-yellow-300" />

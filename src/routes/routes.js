@@ -7,17 +7,20 @@ export const routes = [
   {
     path: "/",
     Page: Home,
-    isShowSearchBar:true
+    isShowSearchBar:false,
+    login:false,
   },
   
   {
     path: "/cart",
     Page: Cart,
-    isShowSearchBar:false
+    isShowSearchBar:false,
+    login:false,
   },
   {
     path:"/:id",
     Page:DetailProduct,
-    isShowSearchBar:true
+    isShowSearchBar:false,
+    login:false,
   }
 ];
