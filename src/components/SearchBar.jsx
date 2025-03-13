@@ -20,7 +20,7 @@ const SearchBar = () => {
     const getCategories = async () => {
       try {
         const res = await axios.get(
-          "https://api.escuelajs.co/api/v1/categories"
+          "https://api.escuelajs.co/api/v1/categories?limit=10"
         );
         setCategories(res.data);
       } catch (error) {

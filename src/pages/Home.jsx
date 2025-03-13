@@ -13,12 +13,13 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const dispatch = useDispatch();
   const { items, status, error } = useSelector((state) => state.products);
+  
 
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
-  const itemsPerPage = 4;
+  const itemsPerPage = 10;
 
   const filteredData = useMemo(() => {
     let filtered = [...items];
@@ -43,7 +44,7 @@ const Home = () => {
       default:
         return filtered;
     }
-  }, [sortMethod,category, items]);
+  }, [sortMethod, category, items]);
 
   const handlePrice = (e) => {
     setsortMethod(e.target.value);
